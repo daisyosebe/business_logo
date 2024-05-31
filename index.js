@@ -53,10 +53,12 @@ async function main() {
   shape.setColor(answers.shapeColor);
   shape.setTextColor(answers.textColor);
 
+  const centerCoordinates = shape.calculateCenterCoordinates();
+
   const svgContent = `
 <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
   ${shape.render()}
-  <text x="150" y="125" fill="${answers.textColor}" font-size="40" text-anchor="middle" alignment-baseline="middle">${answers.text}</text>
+  <text x="${centerCoordinates.x}" y="${centerCoordinates.y}" fill="${answers.textColor}" font-size="40" text-anchor="middle" alignment-baseline="middle">${answers.text}</text>
 </svg>`;
 
   fs.writeFileSync(path.join(distDirectory, 'logo.svg'), svgContent.trim());
