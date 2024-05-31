@@ -1,0 +1,55 @@
+npm i -y
+npm i inquirer
+
+index.js 
+
+logo.svg
+circle.svg
+
+<svg> 
+<circle cx = "150" cy = "100"
+<rect >
+<poly >
+<text x = "150" y="125"/>
+</svg>
+
+
+class Svg {
+    constructor(){
+        thi.version = "1.1";
+        this.width = "300";
+        this.height = "200";
+        this.xmlns = "http://www.w3.org/2000/srg"
+    }
+    render(){
+        return `svg version=${this.version} width=${this.width} height=${this.height}`
+    }
+}
+
+class Circle{
+    constructor(color, ){
+        this.color = color;
+    
+    }
+    render(){
+
+    }
+}
+
+inquirer.promt([
+    {
+        type: "list"
+        message: "what shape do you want"
+        name : "shape"
+        choices: "circle" "square"
+    }
+    {
+        type: "input"
+        message: "what color would you like"
+        name : "shapeColor"
+    }
+]).then (response => {
+    if(response.shape == "circle){
+        const shape = new circle(response.shapeColor)
+    }
+})
